@@ -1,3 +1,5 @@
+App is live on https://normaltext2sql.streamlit.app/ !!!!
+
 # NL to SQL Streamlit App
 
 This is a local Streamlit application that converts natural language questions into secure SQL queries using LangChain, Groq, and SQLite.
