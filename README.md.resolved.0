@@ -1,0 +1,50 @@
+# NL to SQL Streamlit App
+
+This is a local Streamlit application that converts natural language questions into secure SQL queries using LangChain, Groq, and SQLite.
+
+## Features
+
+- **NL Query Builder**: Convert natural language to SQL and execute it.
+- **Manual SQL**: Write and execute custom SQL queries with safety validation.
+- **DB Browser**: Explore the database schema and data.
+- **Safety**: strict SELECT-only enforcement, preventing destructive operations.
+- **Schema Context**: Optional integration with ChromaDB to improve query generation.
+
+## Setup Instructions
+
+1.  **Create Virtual Environment**:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Environment Configuration**:
+    - The [.env](file:///C:/Users/Ahmad%20Saad/.gemini/antigravity/brain/ddbbc1a4-587f-40ce-96a2-ca119ffb03f9/nl2sql_app/.env) file is pre-configured with the provided API key for local development.
+    - **Security Note**: Never commit [.env](file:///C:/Users/Ahmad%20Saad/.gemini/antigravity/brain/ddbbc1a4-587f-40ce-96a2-ca119ffb03f9/nl2sql_app/.env) to version control.
+
+4.  **Initialize Database**:
+    ```bash
+    python db/init_db.py
+    ```
+    This will create `db/demo.sqlite` with sample data.
+
+5.  **Run Application**:
+    ```bash
+    streamlit run app.py
+    ```
+
+## Usage
+
+- **NL Query Tab**: Enter a question like "Show all customers in Lahore" or "Total revenue in 2025". Click "Generate SQL" to see the query, then "Run Query" to execute it.
+- **Manual SQL Tab**: Write custom SQL. Validation will block non-SELECT statements.
+- **DB Browser Tab**: View table structures and data.
+
+## Troubleshooting
+
+- **API Key Errors**: Ensure `GROQ_API_KEY` is set in [.env](file:///C:/Users/Ahmad%20Saad/.gemini/antigravity/brain/ddbbc1a4-587f-40ce-96a2-ca119ffb03f9/nl2sql_app/.env) or Streamlit secrets.
+- **Database Errors**: Run `python db/init_db.py` to reset the database.

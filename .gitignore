@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.db
+.DS_Store
+venv/
+.streamlit/secrets.toml
+dist/
+build/
+*.egg-info/
+tests/test_results.txt
